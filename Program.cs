@@ -14,13 +14,13 @@ namespace ConsoleApp1CopyFile
         static void Main(string[] args)
         {
 
-            string zipFullPath = @"C:\Users\sonyl\source\repos\Zip\TestFolder.zip";
+            string zipFullPath = Dts.Variables["User::ZipFullPath"].Value.ToString();
 
-            string unzip = @"C:\Users\sonyl\source\repos\unzip\";
+            string unzip =Dts.Variables["$Package::unzip"].Value.ToString();
 
-            string policies = @"C:\Users\sonyl\source\repos\policies\";
+            string policies = Dts.Variables["$Package::policies"].Value.ToString();
 
-            string processed = @"C:\Users\sonyl\source\repos\processed\";
+            string processed = Dts.Variables["$Package::processed"].Value.ToString();
 
 
             if (!Directory.Exists(unzip))
